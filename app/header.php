@@ -21,6 +21,7 @@
                     <span class="header__menu-btn-item"></span>
                     <span class="header__menu-btn-item"></span>
                 </div>
+                <!--<span class="header__menu-btn"><i class="fas fa-bars"></i></span>-->
                 <ul class="header__menu-list">
                     <?php foreach ($positions as $row) { ?>
                         <li class="header__list-item"><a class="header__list-link" href="?position=<?php echo $row['id']; ?>"><?php echo $row['position']; ?></a></li>
