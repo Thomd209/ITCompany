@@ -1,9 +1,9 @@
 <?php 
-    //Получение всех работников
+    //Получение всех работников компании
 
     function get_all_workers() {
         global $pdo;
-        $query = "SELECT * FROM workers";
+        $query = "SELECT * FROM workers ORDER BY id DESC";
         $query_result = $pdo->query($query);
         return $query_result;
     }
