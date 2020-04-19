@@ -142,6 +142,11 @@ html, body {
     flex: 1;
 }
 
+.content__table-all-workers {
+    width: 90%;
+    margin: 20px 0 20px 1rem;
+}
+
 .footer {
     width: 100%;
     background: #000;
