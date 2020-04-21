@@ -14,18 +14,17 @@
 <body>
     <div class="wrapper">
         <header class="header">
-            <nav class="header__top-menu">
-                <a class="header__logo" href="index.php">ITCompany</a>
-                <div class="header__menu-btn">
-                    <span class="header__menu-btn-item header__menu-btn-first-item"></span>
-                    <span class="header__menu-btn-item"></span>
-                    <span class="header__menu-btn-item"></span>
+            <div class="header__content">
+                <a href="index.php" class="header__logo">ITCompany</a>
+                <div class="header__menu">
+                    <ul class="header__list">
+                        <?php foreach ($positions as $row) { ?>
+                            <li class="header__list-item"><a href="position.php?position=<?php echo $row['id']; ?>" class="header__link"><?php echo $row['position']; ?></a></li>
+                        <?php } ?>
+                    <ul>
                 </div>
-                <!--<span class="header__menu-btn"><i class="fas fa-bars"></i></span>-->
-                <ul class="header__menu-list">
-                    <?php foreach ($positions as $row) { ?>
-                        <li class="header__list-item"><a class="header__list-link" href="?position=<?php echo $row['id']; ?>"><?php echo $row['position']; ?></a></li>
-                    <?php } ?>
-                </ul>
-            </nav>
+                <div class="header__burger">
+                    <span class="header__burger-item"></span>
+                </div>
+            </div>
         </header>
