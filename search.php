@@ -1,12 +1,9 @@
 <?php require_once 'app/header.php'; ?>
-<?php require_once 'app/get_title.php'; ?>
-<?php require_once 'app/get_position.php'; ?>
+<?php require_once 'app/get_positions.php'; ?>
+<?php require_once 'app/search_worker.php'; ?>
 
 <main class="content">
-        <?php while ($row = $title->fetch()) { ?>
-            <span class="content__title"><?php echo $row['position']; ?></span>
-        <?php } ?>
-    </span>
+    <span class="content__title">Результаты поиска:</span>
     <table class="table table-responsive content__information-table">
         <tr>
             <th>Имя</th>
@@ -14,12 +11,12 @@
             <th>Возраст</th>
             <th>Зарплата</th>
         </tr>
-        <?php while ($row = $workers->fetch()) { ?>
+        <?php while ($row = $search_result->fetch()) { ?>
             <tr>
                 <td><a href="worker.php?worker=<?php echo $row['id']; ?>"><?php echo $row['name']; ?></a></td>
                 <td><?php echo $row['position']; ?></td>
                 <td><?php echo $row['age']; ?></td>
-                <td><?php echo $row['salary']; ?></td>
+                <td> <?php echo $row['salary']; ?></td>
             </tr>
         <?php } ?>
     </table>
