@@ -1,4 +1,6 @@
 <?php
+    //Получение одного конкретного работника
+    
     function get_worker($worker) {
         global $pdo;
         $query = "SELECT * FROM workers WHERE id = ?";

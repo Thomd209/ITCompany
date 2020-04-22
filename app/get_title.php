@@ -1,4 +1,7 @@
 <?php 
+    /*Получение названия одной конкретной должности для страницы с работниками, 
+    которые занимают эту должность*/
+
     function get_title($position) {
         global $pdo;
         $query = "SELECT position FROM positions WHERE id = ?";

@@ -1,10 +1,8 @@
-<?php require_once 'app/config.php' ?>
-<?php require_once 'app/get_positions.php' ?>
-<?php require_once 'app/header.php' ?>
-<?php require_once 'app/get_worker.php' ?>
+<?php require_once 'app/header.php'; ?>
+<?php require_once 'app/get_worker.php'; ?>
 
 <main class="content">
-    <span class="content__title">Информация о работнике:</span>
+    <span class="content__title">Информация о работнике</span>
     <div class="content__worker-inform">
         <?php while ($row = $worker->fetch()) { ?>
             <span class="content__worker-row"><span class="content__worker-description">Имя:</span> <?php echo $row['name'] ?></span>

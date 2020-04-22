@@ -1,5 +1,5 @@
-<?php require_once 'app/config.php' ?>
-<?php require_once 'app/get_positions.php' ?>
+<?php require_once 'app/config.php'; ?>
+<?php require_once 'app/get_positions.php'; ?>
 
 <!DOCTYPE html>
 <html lang="ru">
@@ -27,4 +27,10 @@
                     <span class="header__burger-item"></span>
                 </div>
             </div>
+            <form class="search" action="search.php" method="POST">
+                <div class="search__control">
+                    <input class="search__text" type="search" name="search" placeholder="Поиск работника">
+                    <button class="search__button" type="submit" name="submit_search">Найти</button>
+                </div>
+            </form>
         </header>
