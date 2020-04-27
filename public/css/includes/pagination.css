@@ -1,0 +1,31 @@
+.content__pagination {
+    width: 250px;
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem;
+}
+
+.content__pagination-control {
+    padding: 0;
+}
+
+.content__pagination-item {
+    display: inline-block;
+    list-style-type: none;
+}
+
+.content__pagination-link {
+    padding: 2.5px 7.5px;
+    border: 1px solid #e5e5e5;
+}
+
+.content__pagination-link:hover {
+    background-color: grey;
+    color: #fff;
+    text-decoration: none;
+}
+
+.active {
+    background-color: #000; 
+    color: #fff;
+}

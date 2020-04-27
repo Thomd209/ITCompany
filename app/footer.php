@@ -4,7 +4,8 @@
                 </div>
             </footer>
         </div>
-        
-        <script src="public/js/script.js"></script>
+
+        <script src="public/js/menu.js"></script>
+        <script src="public/js/pagination.js"></script>
     </body>
 </html>
