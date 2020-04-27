@@ -9,5 +9,7 @@
         return $query_result;
     }
 
-    $worker = get_worker($_GET['worker']);
+    if (isset($_GET['worker'])) {
+        $worker = get_worker($_GET['worker']);
+    }
 ?>

@@ -1,0 +1,14 @@
+.content__worker-inform {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+}
+
+.content__worker-row {
+    margin-top: .5rem;
+    font-size: 1.2rem;
+}
+
+.content__worker-description {
+    font-weight: bold;
+}

@@ -1,3 +1,6 @@
 @import url('includes/header.css');
+@import url('includes/search.css');
 @import url('includes/main.css');
+@import url('includes/pagination.css');
+@import url('includes/worker.css');
 @import url('includes/footer.css');

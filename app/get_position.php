@@ -1,5 +1,5 @@
 <?php
-    //Получение работников, которые занимают одну определённую должность
+    //Получение работников, которые занимают определённую должность
     
     function get_position($position) {
         global $pdo;
@@ -9,5 +9,7 @@
         return $query_result;
     }
 
-    $workers = get_position($_GET['position']);
+    if (isset($_GET['position'])) {
+        $workers = get_position($_GET['position']);
+    }
 ?>

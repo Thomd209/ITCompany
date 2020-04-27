@@ -128,30 +128,3 @@ html, body {
         bottom: 0;
     }
 }
-
-.search {
-    position: absolute;
-    top: 70px;
-    margin-left: 1rem;
-}
-
-.search__control {
-    display: flex;
-}
-
-.search__text {
-    padding: 2.5px 5px;
-    border: 1px solid #000;
-    border-radius: 10px;
-}
-
-.search__text::placeholder {
-    color: #000;
-}
-
-.search__button {
-    padding: 5px 10px;
-    background: #000;
-    border-radius: 10px;
-    color: #fff;
-}

@@ -1,8 +1,13 @@
 <?php require_once 'app/header.php'; ?>
-<?php require_once 'app/get_positions.php'; ?>
-<?php require_once 'app/search_worker.php'; ?>
+<?php require_once 'app/search_workers.php'; ?>
 
 <main class="content">
+    <form class="search" action="search.php" method="POST">
+        <div class="search__control">
+            <input class="search__text" type="search" name="search" placeholder="Поиск работника">
+            <button class="search__button" type="submit" name="submit_search">Найти</button>
+        </div>
+    </form>
     <span class="content__title">Результаты поиска:</span>
     <table class="table table-responsive content__information-table">
         <tr>
