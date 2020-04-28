@@ -1,4 +1,6 @@
 <?php
+    //Add pagination to position.php file
+
     if (empty($_SESSION['position'])) {
         $_SESSION['position'] = 0;
     }
