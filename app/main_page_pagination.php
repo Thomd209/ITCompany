@@ -1,4 +1,6 @@
 <?php
+    //Add pagination to index.php file
+
     if (empty($_GET['page']) || ctype_digit($_GET['page']) === false) {
         $page = 1;
     } else {

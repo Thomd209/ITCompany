@@ -1,5 +1,5 @@
 <?php
-    //Подключение к БД
+    //Connection to the database
 
     $host = 'localhost';
     $db = 'itcompany';

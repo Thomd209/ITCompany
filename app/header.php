@@ -1,5 +1,5 @@
-<?php require_once 'app/config.php'; ?>
-<?php require_once 'app/get_positions.php'; ?>
+<?php require_once 'config.php'; ?>
+<?php require_once 'get_positions.php'; ?>
 
 <!DOCTYPE html>
 <html lang="ru">
