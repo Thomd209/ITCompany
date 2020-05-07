@@ -1,4 +1,7 @@
-<?php require_once 'app/header.php'; ?>
+<?php //Страница, на которой будут отображаться результаты поиска ?>
+<?php session_start(); ?>
+<?php if (!empty($_SESSION['auth'])) { ?>
+<?php require_once 'app/layouts/header.php'; ?>
 <?php require_once 'app/search_workers.php'; ?>
 
 <main class="content">
@@ -27,4 +30,9 @@
     </table>
 </main>
 
-<?php require_once 'app/footer.php'; ?>
+<?php require_once 'app/layouts/footer.php'; ?>
+
+<?php } else {
+    header('Location: signin.php');
+}
+?>

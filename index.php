@@ -1,6 +1,8 @@
-<?php require_once 'app/header.php'; ?>
+<?php //Главная страница сайта ?>
+<?php session_start(); ?>
+<?php if (!empty($_SESSION['auth'])) { ?>
+<?php require_once 'app/layouts/header.php'; ?>
 <?php require_once 'app/main_page_pagination.php'; ?>
-
 <main class="content">
     <form class="search" action="search.php" method="POST">
         <div class="search__control">
@@ -80,4 +82,8 @@
     </div>
 </main>
 
-<?php require_once 'app/footer.php'; ?>
+<?php require_once 'app/layouts/footer.php'; ?>
+<?php } else {
+    header('Location: signin.php');
+}
+?>

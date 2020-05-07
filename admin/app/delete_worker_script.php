@@ -1,4 +1,6 @@
 <?php 
+    //Скрипт, позволяющий удалить работника
+    
     function delete_worker($worker_id) {
         global $pdo;
         $query = "DELETE FROM workers WHERE id = ?";

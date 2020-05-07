@@ -4,6 +4,13 @@
     font-weight: bold;
 }
 
+.worker__empty-fields-message {
+    width: 400px;
+    margin: 1rem;
+    padding: 0px 0 10px 20px;
+    background-color: #f27458;
+}
+
 .worker-form {
     width: 200px;
     margin: 1rem;

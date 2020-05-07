@@ -1,7 +1,7 @@
-<?php 
-    session_start(); 
-?>
-<?php require_once 'app/header.php'; ?>
+<?php //Страница сайта, на которой можно посмотреть работников компании, которые занимают только одну из должностей ?>
+<?php session_start(); ?>
+<?php if (!empty($_SESSION['auth'])) { ?>
+<?php require_once 'app/layouts/header.php'; ?>
 <?php require_once 'app/get_title.php'; ?>
 <?php require_once 'app/position_pagination.php'; ?>
 
@@ -86,4 +86,9 @@
     </div>
 </main>
 
-<?php require_once 'app/footer.php'; ?>
+<?php require_once 'app/layouts/footer.php'; ?>
+
+<?php } else {
+    header('Location: signin.php');
+}
+?>

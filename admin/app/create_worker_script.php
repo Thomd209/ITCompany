@@ -1,12 +1,10 @@
 <?php
-    $name_checked = '';
-    $age_checked = '';
-    $salary_checked = '';
-
+    //Скрипт, позволяющий создать работника
+    
     if (isset($_POST['submit'])) {
-        $name_checked = check_form_data($_POST['name']);
-        $age_checked = check_form_data($_POST['age']);
-        $salary_checked = check_form_data($_POST['salary']);
+        $num_empty_fields = check_fields_for_emptiness($_POST['name']);
+        $num_empty_fields = check_fields_for_emptiness($_POST['age']);
+        $num_empty_fields = check_fields_for_emptiness($_POST['salary']);
     }
     
     switch ($_GET['position_id']) {
