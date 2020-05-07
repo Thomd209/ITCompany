@@ -1,0 +1,46 @@
+.signup {
+    width: 400px;
+    margin: 30px auto;
+}
+
+.signup__title {
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.signup__question {
+    display: inline-block;
+    width: 100%;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.signup__empty_fields_message {
+    padding: 10px;
+    background-color: #f27458;
+}
+
+.signup__error-message {
+    width: 100%;
+    text-align: center;
+    color: red;
+}
+
+.signup__form {
+    width: 250px;
+    margin: 10px auto;
+}
+
+.signup__submit {
+    display: block;
+    margin: 0 auto;
+    padding: 10px;
+    background-color: #000;
+    border: none;
+    border-radius: 50px;
+    color: #fff;
+}

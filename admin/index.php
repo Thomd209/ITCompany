@@ -1,5 +1,7 @@
-<?php require_once '../app/config.php'; ?>
-<?php require_once 'app/header.php'; ?>
+<?php //Главная страница админки сайта ?>
+<?php session_start(); ?>
+<?php if (!empty($_SESSION['auth'] && $_SESSION['login'] == "admin")) { ?>
+<?php require_once 'app/layouts/header.php'; ?>
 <?php require_once '../app/main_page_pagination.php'; ?>
 <?php require_once 'app/delete_worker_script.php'; ?>
 
@@ -11,7 +13,7 @@
         </div>
     </form>
     <span class="content__title">Все работники компании:</span>
-    <a class="content__btn-add-worker btn btn-success" href="select_category_create_worker.php"><i class="fas fa-user-plus"></i></a>
+    <a class="content__btn-add-worker btn btn-success" href="select_category.php"><i class="fas fa-user-plus"></i></a>
     <table class="table table-responsive content__information-table">
         <tr>
             <th>Имя</th>
@@ -27,7 +29,7 @@
                 <td><?php echo $row['position']; ?></td>
                 <td><?php echo $row['age']; ?></td>
                 <td><?php echo $row['salary']; ?></td>
-                <td class="center"><a class="btn btn-primary" href="select_category_change_worker.php?id=<?php echo $row['id']; ?>"><i class="fas fa-user-edit"></i></td>
+                <td class="center"><a class="btn btn-primary" href="select_category.php?id=<?php echo $row['id']; ?>"><i class="fas fa-user-edit"></i></td>
                 <td><a class="btn btn-danger" href="?worker_id=<?php echo $row['id']; ?>"><i class="fas fa-user-minus"></i></td>
             </tr>
         <?php } ?>
@@ -87,4 +89,9 @@
     </div>
 </main>
 
-<?php require_once 'app/footer.php'; ?>
+<?php require_once '../../ITCompany/app/layouts/footer.php'; ?>
+
+<?php } else {
+    header('Location: ../index.php');
+}
+?>

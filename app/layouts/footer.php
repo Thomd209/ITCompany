@@ -5,7 +5,7 @@
             </footer>
         </div>
 
-        <script src="public/js/menu.js"></script>
-        <script src="public/js/pagination.js"></script>
+        <script src="../../../ITCompany/public/js/menu.js"></script>
+        <script src="../../../ITCompany/public/js/pagination.js"></script>
     </body>
 </html>

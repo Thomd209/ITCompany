@@ -1,5 +1,5 @@
 <?php
-    //Add pagination to position.php file
+    //Скрипт, позволяющий осуществить паджинацию на странице position.php
 
     if (empty($_SESSION['position'])) {
         $_SESSION['position'] = 0;

@@ -1,0 +1,46 @@
+.signin {
+    width: 400px;
+    margin: 30px auto;
+}
+
+.signin__title {
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.signin__question {
+    display: inline-block;
+    width: 100%;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.signin__empty_fields_message {
+    padding: 10px;
+    background-color: #f27458;
+}
+
+.signin__bad-input-data {
+    display: inline-block;
+    text-align: center;
+    color: red;
+}
+
+.signin__form {
+    width: 250px;
+    margin: 10px auto;
+}
+
+.signin__submit {
+    display: block;
+    margin: 20px auto;
+    padding: 10px;
+    background-color: #000;
+    border: none;
+    border-radius: 50px;
+    color: #fff;
+}

@@ -1,5 +1,5 @@
 <?php
-    //Add pagination to index.php file
+    //Скрипт, позволяющий осуществить паджинацию на главной странице сайта (index.php)
 
     if (empty($_GET['page']) || ctype_digit($_GET['page']) === false) {
         $page = 1;

@@ -1,4 +1,7 @@
-<?php require_once 'app/header.php'; ?>
+<?php //Персональная страница каждого из работников компании ?>
+<?php session_start(); ?>
+<?php if (!empty($_SESSION['auth'])) { ?>
+<?php require_once 'app/layouts/header.php'; ?>
 <?php require_once 'app/get_worker.php'; ?>
 
 <main class="content">
@@ -19,4 +22,9 @@
     </div>
 </main>
 
-<?php require_once 'app/footer.php'; ?>
+<?php require_once 'app/layouts/footer.php'; ?>
+
+<?php } else {
+    header('Location: signin.php');
+}
+?>
