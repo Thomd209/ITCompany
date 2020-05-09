@@ -1,9 +1,10 @@
 <?php //Главная страница админки сайта ?>
 <?php session_start(); ?>
-<?php if (!empty($_SESSION['auth'] && $_SESSION['login'] == "admin")) { ?>
-<?php require_once 'app/layouts/header.php'; ?>
+<?php if (!empty($_SESSION['auth']) && $_SESSION['login'] == "admin") { ?>
+    <?php require_once '../app/config.php'; ?>
 <?php require_once '../app/main_page_pagination.php'; ?>
 <?php require_once 'app/delete_worker_script.php'; ?>
+<?php require_once 'app/layouts/header.php'; ?>
 
 <main class="content">
     <form class="search" action="../search.php" method="POST">
@@ -36,7 +37,9 @@
     </table>
     <div class="content__pagination">
         <ul class="content__pagination-control">
-
+        <?php if ($page > 1) { ?>
+            <a class="content__pagination-link" href="?page=<?php echo $prev; ?>">&laquo;</a>
+        <?php } ?>
         <?php if ($num_pages <= 5) { ?>
             <?php foreach (range(1, $num_pages) as $p) { ?>
                 <li class="content__pagination-item">
@@ -76,20 +79,14 @@
                 </li>
             <?php } ?>
         <?php } ?>
-        
-        </ul>
-        <ul class="content__pagination-control">
-            <li class="content__pagination-item">
-                <a class="content__pagination-link" href="?page=<?php echo $prev; ?>">&laquo;</a>
-            </li>
-            <li class="content__pagination-item">
-                <a class="content__pagination-link" href="?page=<?php echo $next; ?>">&raquo;</a>
-            </li>
+        <?php if ($page < $num_pages) { ?>
+            <a class="content__pagination-link" href="?page=<?php echo $next; ?>">&raquo;</a>
+        <?php } ?>
         </ul>
     </div>
 </main>
 
-<?php require_once '../../ITCompany/app/layouts/footer.php'; ?>
+<?php require_once 'app/layouts/footer.php'; ?>
 
 <?php } else {
     header('Location: ../index.php');

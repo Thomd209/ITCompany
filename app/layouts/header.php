@@ -17,7 +17,7 @@
             <div class="login">
                 <span>Вы вошли как <?php echo $_SESSION['login']; ?></span>
                 <?php if ($_SESSION['login'] == "admin") { ?>
-                    <a class="login__link" href="../../../ITCompany/admin/index.php">Админка</a>
+                    <a class="login__link-admin-page" href="admin/index.php">Админка</a>
                 <?php } ?>
             </div>
             <div class="header__content">
@@ -25,12 +25,14 @@
                 <nav class="main-nav">
                     <ul class="main-nav__menu">
                         <?php foreach ($positions as $row) { ?>
-                            <li class="main-nav__item"><a href="position.php?position=<?php echo $row['id']; ?>" class="main-nav__link"><?php echo $row['position']; ?></a></li>
+                            <li class="main-nav__item">
+                                <a href="position.php?position=<?php echo $row['id']; ?>" class="main-nav__link main-nav__link-menu"><?php echo $row['position']; ?></a>
+                            </li>
                         <?php } ?>
                     </ul>
-                    <ul class="main-nav__user-authentication">
-                        <li class="main-nav__item">
-                            <a href="logout.php" class="main-nav__link"><i class="fas fa-sign-out-alt"></i> Выход</a>
+                    <ul class="main-nav__logout">
+                        <li class="main-nav__item-logout">
+                            <a href="logout.php" class="main-nav__link main-nav__link-logout"><i class="fas fa-sign-out-alt"></i> Выход</a>
                         </li>
                     </ul>
                 </nav>

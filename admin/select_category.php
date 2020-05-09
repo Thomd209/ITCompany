@@ -17,7 +17,7 @@
     </div>
 </main>
 
-<?php require_once '../../ITCompany/app/layouts/footer.php'; ?>
+<?php require_once 'app/layouts/footer.php'; ?>
 
 <?php } else {
     header('Location: ../index.php');

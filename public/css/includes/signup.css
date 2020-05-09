@@ -1,5 +1,4 @@
 .signup {
-    width: 400px;
     margin: 30px auto;
 }
 
@@ -20,8 +19,21 @@
 }
 
 .signup__empty_fields_message {
+    width: 30%;
+    margin: 0 auto;
     padding: 10px;
     background-color: #f27458;
+}
+
+@media all and (max-width: 425px) {
+    .signup__empty_fields_message {
+        width: 60%;
+    }
+}
+
+.signup__empty_fields_message ul {
+    padding-left: 0;
+    list-style-type: none;
 }
 
 .signup__error-message {

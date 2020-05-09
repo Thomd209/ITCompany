@@ -12,7 +12,7 @@
             <button class="search__button" type="submit" name="submit_search">Найти</button>
         </div>
     </form>
-    <?php while ($row = $title->fetch()) { ?>
+    <?php foreach ($title as $row) { ?>
         <span class="content__title"><?php echo $row['position']; ?></span>
     <?php } ?>
     <table class="table table-responsive content__information-table">
@@ -33,11 +33,13 @@
     </table>
     <div class="content__pagination">
         <ul class="content__pagination-control">
-
+        <?php if ($page > 1) { ?>
+            <a class="content__pagination-link" href="?page=<?php echo $prev; ?>">&laquo;</a>
+        <?php } ?>
         <?php if ($num_pages <= 5) { ?>
             <?php foreach (range(1, $num_pages) as $p) { ?>
                 <li class="content__pagination-item">
-                    <a class="content__pagination-link" href="?id=<?php echo $_SESSION['position']; ?>&page=<?php echo $p; ?>"><?php echo $p; ?></a>
+                    <a class="content__pagination-link" href="?page=<?php echo $p; ?>"><?php echo $p; ?></a>
                 </li>
             <?php } ?>
         <?php } ?>
@@ -45,7 +47,7 @@
         <?php if ($num_pages > 5 && $page <= 5) { ?>
             <?php foreach (range(1, 5) as $p) { ?>
                 <li class="content__pagination-item">
-                    <a class="content__pagination-link" href="?id=<?php echo $_SESSION['position']; ?>&page=<?php echo $p; ?>"><?php echo $p; ?></a>
+                    <a class="content__pagination-link" href="?page=<?php echo $p; ?>"><?php echo $p; ?></a>
                 </li>
             <?php } ?>
         <?php } ?>
@@ -53,7 +55,7 @@
         <?php if ($num_pages - 5 <= 5 && $num_pages - 5 > 0 && $page > 5) { ?>
             <?php foreach (range($num_pages - 4, $num_pages) as $p) { ?>
                 <li class="content__pagination-item">
-                    <a class="content__pagination-link" href="?id=<?php echo $_SESSION['position']; ?>&page=<?php echo $p; ?>"><?php echo $p; ?></a>
+                    <a class="content__pagination-link" href="?page=<?php echo $p; ?>"><?php echo $p; ?></a>
                 </li>
             <?php } ?>
         <?php } ?>
@@ -61,7 +63,7 @@
         <?php if ($num_pages - 5 > 5 && $page > 5 && $page < $num_pages - 4) { ?>
             <?php foreach (range($page - 2, $page + 2) as $p) { ?>
                 <li class="content__pagination-item">
-                    <a class="content__pagination-link" href="?id=<?php echo $_SESSION['position']; ?>&page=<?php echo $p; ?>"><?php echo $p; ?></a>
+                    <a class="content__pagination-link" href="?page=<?php echo $p; ?>"><?php echo $p; ?></a>
                 </li>
             <?php } ?>
         <?php } ?>
@@ -69,19 +71,13 @@
         <?php if ($num_pages - 5 > 5 && $page >= $num_pages - 4) { ?>
             <?php foreach (range($num_pages - 4, $num_pages) as $p) { ?>
                 <li class="content__pagination-item">
-                    <a class="content__pagination-link" href="?id=<?php echo $_SESSION['position']; ?>&page=<?php echo $p; ?>"><?php echo $p; ?></a>
+                    <a class="content__pagination-link" href="?page=<?php echo $p; ?>"><?php echo $p; ?></a>
                 </li>
             <?php } ?>
         <?php } ?>
-        
-        </ul>
-        <ul class="content__pagination-control">
-            <li class="content__pagination-item">
-                <a class="content__pagination-link" href="?id=<?php echo $_SESSION['position']; ?>&page=<?php echo $prev; ?>">&laquo;</a>
-            </li>
-            <li class="content__pagination-item">
-                <a class="content__pagination-link" href="?id=<?php echo $_SESSION['position']; ?>&page=<?php echo $next; ?>">&raquo;</a>
-            </li>
+        <?php if ($page < $num_pages) { ?>
+            <a class="content__pagination-link" href="?page=<?php echo $next; ?>">&raquo;</a>
+        <?php } ?>
         </ul>
     </div>
 </main>

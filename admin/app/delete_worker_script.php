@@ -8,5 +8,7 @@
         $query_result->execute([$worker_id]);
     }
 
-    delete_worker($_GET['worker_id']);
+    if (!empty($_GET['worker_id'])) {
+        delete_worker($_GET['worker_id']);
+    }
 ?>
