@@ -11,6 +11,12 @@
     background-color: #f27458;
 }
 
+@media all and (max-width: 425px) {
+    .worker__empty-fields-message {
+        width: 90%;
+    }
+}
+
 .worker-form {
     width: 200px;
     margin: 1rem;

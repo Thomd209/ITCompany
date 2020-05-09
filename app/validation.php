@@ -1,6 +1,6 @@
 <?php 
     //Валидация данных, введённых пользователем сайта в поля формы
-
+    
     function check_fields_for_emptiness($field) {
         if (empty($field)) {
             $num_empty_fields = 1;

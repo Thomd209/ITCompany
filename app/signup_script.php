@@ -1,12 +1,15 @@
 <?php
     //Скрипт, позволяющий зарегистрироваться пользователю на сайте
-    
+    $num_empty_fields = "";
+
     if (isset($_POST['submit'])) {
         $num_empty_fields = check_fields_for_emptiness($_POST['email']);
         $num_empty_fields = check_fields_for_emptiness($_POST['login']);
         $num_empty_fields = check_fields_for_emptiness($_POST['pass']);
         $num_empty_fields = check_fields_for_emptiness($_POST['pass_confirm']);
     }
+
+    $error_message = "";
 
     if (isset($_POST['submit']) && !empty($_POST['email']) && !empty($_POST['login']) && !empty($_POST['pass']) && !empty($_POST['pass_confirm'])) {
         $error_message = check_data();

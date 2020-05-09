@@ -1,6 +1,8 @@
 <?php
     //Скрипт, позволяющий изменить работника
 
+    $num_empty_fields = "";
+
     if (isset($_POST['submit'])) {
         $num_empty_fields = check_fields_for_emptiness($_POST['name']);
         $num_empty_fields = check_fields_for_emptiness($_POST['age']);

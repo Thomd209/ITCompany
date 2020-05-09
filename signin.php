@@ -30,11 +30,11 @@
         <form class="signin__form" action="signin.php" method="post">
             <div class="form-group">
                 <label for="login">Логин:</label>
-                <input class="form-control signin__input" type="text" value="<?php echo $_POST['login']; ?>" name="login" id="login">
+                <input class="form-control signin__input" type="text" value="<?php if (!empty($_POST['login'])) echo $_POST['login']; ?>" name="login" id="login">
             </div>
             <div class="form-group">
                 <label for="pass">Пароль:</label>
-                <input class="form-control signin__input" type="password" value="<?php echo $_POST['pass']; ?>" name="pass" id="pass">
+                <input class="form-control signin__input" type="password" value="<?php if (!empty($_POST['pass'])) echo $_POST['pass']; ?>" name="pass" id="pass">
             </div>
             <input class="signin__submit" type="submit" name="submit" value="Войти">
         </form>

@@ -15,13 +15,15 @@
         <header class="header">
             <div class="login">
                 <span>Вы вошли как <?php echo $_SESSION['login']; ?></span>
-                <a class="login__link" href="../../../ITCompany/index.php">На главную сайта</a>
+                <?php if ($_SESSION['login'] == "admin") { ?>
+                    <a class="login__link-admin-page" href="../index.php">Главная</a>
+                <?php } ?>
             </div>
             <div class="header__content">
                 <a href="index.php" class="header__logo">ITCompany</a>
-                <ul>
-                    <li class="main-nav__item">
-                        <a href="../logout.php" class="main-nav__link"><i class="fas fa-sign-out-alt"></i> Выход</a>
+                <ul class="main-nav__logout">
+                    <li class="main-nav__item-logout">
+                        <a href="../logout.php" class="main-nav__link main-nav__link-admin-logout"><i class="fas fa-sign-out-alt"></i> Выход</a>
                     </li>
                 </ul>
             </div>

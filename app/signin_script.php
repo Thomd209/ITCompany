@@ -1,5 +1,8 @@
 <?php 
     //Скрипт, позволяющий осуществить пользователю вход на сайт
+
+    $num_empty_fields = "";
+
     if (isset($_POST['submit'])) {
         $num_empty_fields = check_fields_for_emptiness($_POST['login']);
         $num_empty_fields = check_fields_for_emptiness($_POST['pass']);
@@ -20,6 +23,7 @@
     }
 
     function check_user($user) {
+        $bad_input_data = "";
         if (!empty($user)) {
             foreach ($user as $row) {
                 $hash = $row['password'];
@@ -31,9 +35,8 @@
                 header('Location: index.php');
             } else {
                 $bad_input_data = "Введённые вами логин или пароль являются неправильными";
+                return $bad_input_data;
             }
         }
-
-        return $bad_input_data;
     }
 ?>

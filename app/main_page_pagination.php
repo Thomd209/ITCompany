@@ -41,7 +41,7 @@
     $limit = 4;
     $offset = count_offset();
     $num_pages = count_pages();
-
+    
     if ($page == 1) {
         $prev = '#';
     } else {
